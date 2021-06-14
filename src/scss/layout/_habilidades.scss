@@ -1,0 +1,25 @@
+.contenido-habilidades{
+    h2{
+        color: $blanco;
+        text-align: center;
+        font-weight: $regular;
+        font-size: $separacion/1.5;
+        margin-top: $separacion/2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &::after {
+            content: "";
+            display: block;
+            width: 30rem;
+            height: 0.2rem;
+            background-color: $blanco;
+        }
+    }
+    .iconos-habilidades{
+        @include grid(2, $separacion/2);
+        @include tablet{
+            @include grid(4, $separacion);
+        }
+    }
+}

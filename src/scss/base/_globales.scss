@@ -1,0 +1,53 @@
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*,*::before, *::after{
+    box-sizing: inherit;
+}
+html, body{
+    scroll-behavior: smooth;//Poner en javaScript
+}
+body{
+    font-family: $fuentePrincipal;
+    font-size: 1.8rem;
+    line-height: 1.8;
+    background-color: $negro;
+}
+.contenedor{
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+p{
+    color: $blanco;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img,picture{
+    width: 100%;
+    display: block;
+} 
+h1,h2,h3{
+    font-family: $fuentePrincipal;
+    margin: $separacion/2 0;
+    font-weight: $delgada;
+    margin: 0;
+}
+h1{
+    font-size: 3.8rem;
+}
+h2{
+    font-size: 3.4rem;
+}
+h3{
+    font-size: 3rem;
+}
+h4{
+    font-size: 2.6rem;
+}

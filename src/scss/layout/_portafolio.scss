@@ -1,0 +1,80 @@
+.portafolio{
+    display: flex;
+    flex-direction: column;
+    margin-top: $separacion/2;
+    h2{
+        text-align: center;
+        color: $blanco;
+        font-weight: $regular;
+        font-size: $separacion/1.5;
+        margin-top: $separacion/2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &::after {
+            content: "";
+            display: block;
+            width: 30rem;
+            height: 0.2rem;
+            background-color: $blanco;
+        }
+    }
+}
+
+.apartado-portafolio{
+    margin-top: $separacion/1.5;
+    @include grid(1, $separacion);
+    @include tablet{
+        @include grid(4, $separacion/2);
+    }
+    .proyecto{
+        position: relative;
+        .imagen{
+            width: auto;
+            height: 100%;
+        }
+        &:hover{
+            .datos-proyecto{
+                height: 100%;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+.datos-proyecto{
+    position: absolute;
+    background-color: rgba($negro, .7);
+    width: 100%;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden  ;
+    transition: all 1s ease;
+    .iconos{
+        display: flex;
+        picture{
+            width: $separacion;
+            height: $separacion;
+        }
+        margin-bottom: $separacion/2;
+    }
+    .enlaces{
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        a{
+            color: $blanco;
+            font-size: 4rem;
+            font-weight: $bold;
+            &:hover{
+                border-color: $verde;
+                color: $verde;
+            }
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.effect-fade {
+    animation: fadeAndScale 2.7s cubic-bezier(0.39, -1.05, 0.58, 1.95);
+    animation-delay: -0.2s;
+    transform-origin: center bottom;
+}
+
+@keyframes fadeAndScale {
+    0% {
+        opacity: 0;
+        transform: scale3d(0.75, 0.75, 1);
+    }
+    70% {
+        opacity: 0;
+        transform: scale3d(0.75, 0.75, 1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}

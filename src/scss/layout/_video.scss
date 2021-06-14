@@ -1,0 +1,83 @@
+.video{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    .overlay{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#020000+0,2f2f2f+50,070507+100&0.81+6,0.31+100 */
+        background: -moz-linear-gradient(-45deg,  rgba(2,0,0,0.81) 0%, rgba(7,6,6,0.81) 6%, rgba(47,47,47,0.58) 50%, rgba(7,5,7,0.31) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg,  rgba(2,0,0,0.81) 0%,rgba(7,6,6,0.81) 6%,rgba(47,47,47,0.58) 50%,rgba(7,5,7,0.31) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg,  rgba(2,0,0,0.81) 0%,rgba(7,6,6,0.81) 6%,rgba(47,47,47,0.58) 50%,rgba(7,5,7,0.31) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cf020000', endColorstr='#4f070507',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    }
+    video{
+        display: block;
+        width: auto;
+        height: 100%;
+    }
+}
+
+.contenido-video{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    h1{
+        color: $blanco;
+        font-weight: $bold;
+        font-size: $separacion/1.5;
+        width: 45rem;
+        position: relative;
+        span{
+            color: $azul;
+        }
+        @include tablet{
+            font-size: $separacion;
+        }
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+        &::before{
+            background-color: $azul;
+            animation: typewriter 2s ease forwards;
+        }
+    }
+    .titulo{
+        margin-bottom: $separacion/2;
+        &::before{
+            content: '';
+            display: block;
+            width: 15rem;
+            height: .5rem;
+            background-color: $verde;
+            @include tablet{
+                width: 25rem;
+            }
+        }
+    }
+    p{
+        font-size: $separacion/2.5;
+        @include tablet{
+            font-size: $separacion/2;
+        }
+    }
+}
+
+@keyframes typewriter{
+    to{
+        left: 100%;
+    }
+}

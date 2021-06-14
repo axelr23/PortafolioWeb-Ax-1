@@ -1,0 +1,17 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: $separacion/2;
+    @include tablet{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    a{
+        margin-top: $separacion/2;
+        @include tablet{
+            margin-top: 0;
+        }
+    }
+}

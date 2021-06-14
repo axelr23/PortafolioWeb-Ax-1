@@ -1,0 +1,145 @@
+.navegacion {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+
+
+
+
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    z-index: 2;
+    // position: absolute;
+    // width: 100%;
+    // bottom: 0;
+    @include tablet {
+        height: auto;
+        &.fijo {
+            background-color: $grisOscuro;
+            position: fixed;
+        }
+    }
+
+    .toggler{
+        position: absolute;
+        top: .5rem;
+        left: .5rem;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        opacity: 0;
+        z-index: 3;
+        cursor: pointer;
+    }
+
+    .hamburguer{
+        position: absolute;
+        top: .5rem;
+        left: .5rem;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        background-color: rgba($verde, .5);
+        display: flex;
+        div{
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            border-radius: 1.5px;
+            background-color: $blanco;
+        }
+    }
+}
+
+.contenido-navegacion {
+    margin-top: $separacion;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0;
+    @include tablet {
+        margin-top: 0;
+        flex-direction: row;
+        gap: $separacion * 2;
+        height: auto;
+    }
+}
+.lista {
+    position: relative;
+    z-index: 1;
+    a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+        color: $blanco;
+        font-size: 2.5rem;
+        @include tablet {
+            position: relative;
+        }
+        .icon {
+            position: relative;
+            display: none;
+            line-height: 7.5rem;
+            text-align: center;
+            transition: 0.5s;
+            color: $gris;
+            @include tablet {
+                display: block;
+            }
+            &:hover {
+                color: $blanco;
+            }
+        }
+        .titulo {
+            float: left;
+            font-size: 4rem;
+            font-weight: $regular;
+            @include tablet {
+                position: absolute;
+                top: -7rem;
+                font-size: 2rem;
+                opacity: 0;
+                visibility: hidden;
+                background-color: $verde;
+                border-radius: 3px;
+                width: auto;
+                padding: 5px 1rem;
+                transition: 0.5s;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 12px;
+                    height: 12px;
+                    background-color: $verde;
+                    bottom: -8px;
+                    left: 45%;
+                    transform: rotate(45deg) translateX(-20%);
+                    border-radius: 2px;
+                }
+            }
+        }
+    }
+    &:hover a .titulo {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(0, 40%);
+    }
+    &.activo {
+        a {
+            .icon {
+                color: $blanco;
+            }
+        }
+        a .titulo {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

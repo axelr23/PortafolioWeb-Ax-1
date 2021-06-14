@@ -1,0 +1,106 @@
+.contacto {
+    display: flex;
+    flex-direction: column;
+    h2 {
+        text-align: center;
+        color: $blanco;
+        font-weight: $regular;
+        font-size: $separacion/1.5;
+        margin-top: $separacion/2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &::after {
+            content: "";
+            display: block;
+            width: 30rem;
+            height: 0.2rem;
+            background-color: $blanco;
+        }
+    }
+    .formulario {
+        display: flex;
+        flex-direction: column;
+        margin-top: $separacion;
+        input[type="submit"]{
+            margin-bottom: $separacion/2;
+            @include tablet{
+                width: 20rem;
+            }
+        }
+    }
+    .redes {
+        display: flex;
+        justify-content: center;
+        gap: $separacion/2;
+        a{
+            font-size: 3.5rem;
+            color: rgba($gris, .4);
+            &:hover{
+                color: $azul;
+            }
+        }
+    }
+}
+
+.dato{
+    width: 100%;
+    padding: 1rem 0;
+    margin-bottom: $separacion/2;
+    background-color: $negro;
+    .input-dato {
+        width: 100%;
+        height: 4rem;
+        position: relative;
+        background-color: $negro;
+        input:not([type="submit"]), textarea {
+            height: 100%;
+            width: 100%;
+            border: none;
+            font-size: 1.7rem;
+            border-bottom: 1px solid $gris; 
+            background-color: $negro;
+            outline: none;
+            color: $blanco;
+        }
+        input:not([type="submit"]):focus ~ label,
+        input:not([type="submit"]):valid ~ label,
+        textarea:focus ~ label,
+        textarea:valid ~ label
+        {
+            transform: translateY(-2rem);
+            font-size: 1.5rem;
+            color: $verde;
+        }
+        label {
+            position: absolute;
+            left: 0;
+            bottom: 1.5rem;
+            color: $gris;
+            font-size: 2rem;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        .linea{
+            position: absolute;
+            bottom: 0;
+            height: .2rem;
+            width: 100%;
+        }
+        .linea::before{
+            position: absolute;
+            content: '';
+            height: 100%;
+            width: 100%;
+            background-color: $verde;
+            transform: scaleX(0);
+            transition: transform .6s ease;
+        }
+        input:not([type="submit"]):focus ~ .linea::before,
+        input:not([type="submit"]):valid ~ .linea::before,
+        textarea:focus ~ .linea::before,
+        textarea:valid ~ .linea::before{
+            transform: scaleX(1);
+        }
+    }
+}
