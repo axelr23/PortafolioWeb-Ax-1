@@ -1,34 +1,37 @@
 .navegacion {
-    position: absolute;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    z-index: 2;
+    z-index: 4;
     width: 100%;
     bottom: 0;
     @include tablet {
         top: auto;
         height: auto;
+        position: absolute;
         &.fijo {
             background-color: $grisOscuro;
             position: fixed;
         }
     }
+    &.posicion{
+        position: absolute;
+    }
 
     .toggler{
         position: absolute;
         z-index: 4;
-        top: .5rem;
-        left: .5rem;
+        top: 8rem;
+        left: 1rem;
         width: 6rem;
         height: 6rem;
         border-radius: 50%;
         opacity: 0;
-        z-index: 3;
         cursor: pointer;
+        transition: top .3s ease;
         &:checked + .hamburguer>div{
             transform: rotate(135deg);
         }
@@ -44,12 +47,15 @@
         @include tablet{
             display: none;
         }
+        &.top{
+            top: .5rem;
+        }
     }
 
     .hamburguer{
         position: absolute;
-        z-index: 2;
-        top: 1rem;//8rem
+        z-index: 3;
+        top: 8rem;//8rem
         left: 1rem;
         width: 6rem;
         height: 6rem;
@@ -58,6 +64,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        transition: top .3s ease;
         div{
             position: absolute;
             width: 50%;
@@ -83,6 +90,9 @@
         }
         @include tablet{
             display: none;
+        }
+        &.top{
+            top: .5rem;
         }
     }
 }

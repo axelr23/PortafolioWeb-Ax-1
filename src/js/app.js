@@ -1,20 +1,35 @@
 document.addEventListener('DOMContentLoaded', function(){
     navegacionFija();
-    enlaceActivo();
+    // enlaceActivo();
+    // clickHamburguer();
 });
 
 function navegacionFija(){
     const barra = document.querySelector('.navegacion');
+    const hamburguer = document.querySelector('.hamburguer');
+    const toggler = document.querySelector('.toggler');
     const observer = new IntersectionObserver(function(entries){
         if (!entries[0].isIntersecting){
             barra.classList.add('fijo');
+            hamburguer.classList.add('top');
+            toggler.classList.add('top');
         }else{
             barra.classList.remove('fijo');
+            hamburguer.classList.remove('top');
+            toggler.classList.remove('top');
         }
     });
     observer.observe(document.querySelector('.copyright'));
 }
 
 function enlaceActivo(){
-    const enlaces = document.querySelector('.contenido-navegacion');
+    
+}
+
+function clickHamburguer(){
+    const hamburguer = document.querySelector('.toggler');
+    const navegacion = document.querySelector('.navegacion');
+    hamburguer.addEventListener('click', function (){
+        navegacion.classList.toggle('posicion');
+    });
 }
