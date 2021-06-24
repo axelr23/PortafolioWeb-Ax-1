@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
     navegacionFija();
     // enlaceActivo();
-    // clickHamburguer();
+    clickHamburguer();
 });
 
 function navegacionFija(){
@@ -29,7 +29,16 @@ function enlaceActivo(){
 function clickHamburguer(){
     const hamburguer = document.querySelector('.toggler');
     const navegacion = document.querySelector('.navegacion');
+    const enlaces = document.querySelector('.contenido-navegacion');
     hamburguer.addEventListener('click', function (){
-        navegacion.classList.toggle('posicion');
+        if(enlaces.classList.contains('enlaces-activo')){
+            enlaces.classList.remove('enlaces-activo');
+            setTimeout(() => {
+                navegacion.classList.remove('posicion');
+            }, 400);
+        }else{
+            navegacion.classList.add('posicion');
+            enlaces.classList.add('enlaces-activo');
+        }
     });
 }

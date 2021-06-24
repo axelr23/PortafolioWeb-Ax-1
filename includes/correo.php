@@ -10,10 +10,10 @@
 
     //Cuerpo del mensaje
     $header = "Enviado desde la pagina Axel Rangel";
-    $mesnajeCompleto = $mesnaje . "\nAtentamente: " . $nombre;
+    $mensajeCompleto = $mesnaje . "\nAtentamente: " . $nombre . "\n" . $correo;
 
     //Metodo para enviar correo
-    mail($destinatario, $asunto, $mesnajeCompleto, $header);
+    mail($destinatario, $asunto, $mensajeCompleto, $header);
     echo "<script>alert('Correo eniavo con exito')</script>";
     echo "<script> setTimeout(\"location.href='index.html#contacto'\",1000)</script>";
 ?>
