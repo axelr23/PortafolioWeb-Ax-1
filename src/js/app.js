@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
     navegacionFija();
     // enlaceActivo();
     clickHamburguer();
+    crearHabilidades();
 });
 
 function navegacionFija(){
@@ -41,4 +42,35 @@ function clickHamburguer(){
             enlaces.classList.add('enlaces-activo');
         }
     });
+}
+
+async function crearHabilidades(){
+    try{
+        const ruta = "build/img/skills/";
+        const resultado = await fetch('./data.json');
+        const db = await resultado.json();
+        const {skills} = db;
+        const seccionIconos = document.querySelector('.iconos-habilidades');
+        skills.forEach(hab => {
+            const {icon, name, description}= hab;
+            
+            const img = document.createElement('IMG');
+            img.src = ruta + icon;
+            img.alt = "Imagen Skill";
+            img.onclick = mostrarInformacionHabilidad();
+
+
+            const skill = document.createElement('LI');
+            skill.classList.add('skill');
+            skill.appendChild(img);
+
+            seccionIconos.appendChild(skill);
+        });
+    } catch(error){
+        console.log(error);
+    }
+}
+
+function mostrarInformacionHabilidad(){
+    console.log("click skill");
 }
