@@ -32,3 +32,39 @@
         }
     }
 }
+
+.descripcion-skill{
+    background-color: rgba($blanco, .8);
+    height: auto;
+    width: 30rem;
+    border-radius: 2rem;
+    padding:0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h4{
+        text-align: center;
+        margin:$separacion/3 0;
+    }
+    p{
+        color: $negro;
+        font-size: 2rem;
+        margin-bottom: $separacion;
+        text-align: center;
+    }
+}
+
+.overlay-skill{
+    position: fixed;
+    background-color: rgba($color: $negro, $alpha: .5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $separacion/2;
+    z-index: 5;
+}

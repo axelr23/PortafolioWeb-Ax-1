@@ -4,6 +4,12 @@
     transform-origin: center bottom;
 }
 
+.effect-fade-2 {
+    animation: fadeAndScale .9s cubic-bezier(0.39, -1.05, 0.58, 1.95);
+    animation-delay: -0.5s;
+    transform-origin: center center;
+}
+
 @keyframes fadeAndScale {
     0% {
         opacity: 0;

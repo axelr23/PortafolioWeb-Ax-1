@@ -1,44 +1,52 @@
 {
     "skills": [
         {
+            "id": 1,
             "icon": "html.svg",
             "name": "HTML5",
             "description":"HTML5 es un lenguaje de etiquetas, utilizado para la estructuración y la presentación de contenido en los sitios web."
         },
         {
+            "id": 2,
             "icon": "css.svg",
             "name": "CSS3",
             "description": "CSS3 es un lenguaje que nos permite darle aspecto a nuestro sitio web."
         },
         {
+            "id": 3,
             "icon": "js.svg",
             "name": "JAVASCRIPT",
             "description": "JavaScript es un lenguaje de programación o de secuencias de comandos que te permite implementar funciones complejas en páginas web."
         },
         {
+            "id": 4,
             "icon": "php.svg",
             "name": "PHP",
             "description": "PHP es un lenguaje de programación de uso general que se adapta especialmente al desarrollo web.​"
         },
         {
+            "id": 5,
             "icon": "sass.svg",
             "name": "SASS",
             "description": "SASS es un lenguaje de hoja de estilos en cascada."
         },
         {
+            "id": 6,
             "icon": "npm.svg",
             "name": "NPM",
             "description": "NPM es el sistema de gestión de paquetes por defecto para Node.js."
         },
         {
+            "id": 7,
             "icon": "git.svg",
             "name": "GIT, GITHUB",
-            "description": "Git es un software de control de versiones."
+            "description": "GIT es un software de control de versiones, GITHUB es un portal creado para alojar el código de las aplicaciones de cualquier desarrollador."
         },
         {
+            "id": 8,
             "icon": "gulp.svg",
             "name": "GULP",
-            "description": "GULP es una herramienta que permite automatizar una serie de tareas dentro del desarrollo web"
+            "description": "GULP es una herramienta que permite automatizar una serie de tareas dentro del desarrollo web."
         }
     ]
 }
