@@ -48,5 +48,13 @@
             "name": "GULP",
             "description": "GULP es una herramienta que permite automatizar una serie de tareas dentro del desarrollo web."
         }
+    ],
+    "portafolio":[
+        {
+            "imagen": "pa",
+            "repositorio": "https://github.com/axelr23/PortafolioWeb-Ax-1",
+            "pagina": "#",
+            "tecnologias": ["html.png", "css.png", "js.png", "php.png"]
+        }
     ]
 }

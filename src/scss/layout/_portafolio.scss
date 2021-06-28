@@ -25,6 +25,9 @@
     margin-top: $separacion/1.5;
     @include grid(1, $separacion);
     @include tablet{
+        @include grid(3, $separacion/2);
+    }
+    @include desktop{
         @include grid(4, $separacion/2);
     }
     .proyecto{
@@ -65,15 +68,21 @@
     }
     .enlaces{
         display: flex;
-        gap: 3rem;
+        gap: 1.6rem;
         align-items: center;
+        justify-content: center;
+        width: 100%;
         a{
-            color: $blanco;
-            font-size: 4rem;
-            font-weight: $bold;
+            display: inline-block;
+            color: $negro;
+            font-size: 1.6rem;
+            padding: .5rem 2rem;
+            border-radius: 2px;
+            background-color: $blanco;
+            transition: all .5s ease;
             &:hover{
-                border-color: $verde;
-                color: $verde;
+                background-color: $verde;
+                color: $blanco;
             }
         }
     }

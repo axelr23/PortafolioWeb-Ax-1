@@ -17,17 +17,24 @@
         }
     }
     .iconos-habilidades{
-        margin-top: $separacion*2;
+        margin-top: $separacion;
         .skill{
             border-radius: 1rem;
-            width: 18rem;
+            width: 10rem;
             cursor: pointer;
             img{
                 border-radius: 1rem
             }
+            @include tablet{
+                width: 18rem;
+            }
         }
         @include grid(2, $separacion/2);
         @include tablet{
+            margin-top: $separacion*2;
+            @include grid(3, $separacion);
+        }
+        @include desktop{
             @include grid(4, $separacion);
         }
     }

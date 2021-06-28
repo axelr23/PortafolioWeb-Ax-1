@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // enlaceActivo();
     clickHamburguer();
     crearHabilidades();
+    crearPortafolio();
 });
 
 function navegacionFija() {
@@ -75,7 +76,7 @@ async function crearHabilidades() {
 }
 
 function mostrarInformacionHabilidad(e) {
-    // console.log(e.target.dataset.imagenId);
+
     const encabezadoSkill = document.createElement('H4');
     encabezadoSkill.textContent = e.target.dataset.imagenName;
 
@@ -84,7 +85,6 @@ function mostrarInformacionHabilidad(e) {
 
     const containerDescription = document.createElement('DIV');
     containerDescription.classList.add('descripcion-skill');
-    // containerDescription.classList.add('effect-fade-2');
     containerDescription.appendChild(encabezadoSkill);
     containerDescription.appendChild(descriptionSkill);
 
@@ -103,4 +103,75 @@ function mostrarInformacionHabilidad(e) {
     const body = document.querySelector('body');
     body.appendChild(overlay);
     body.classList.add('fijar-body');
+}
+
+async function crearPortafolio(){
+    try {
+        const ruta = "build/img/portafolio/";
+        const resultado = await fetch('./data.json');
+        const db = await resultado.json();
+        const { portafolio } = db;
+        const seccionPortafolio = document.querySelector('.apartado-portafolio');
+        portafolio.forEach(por => {
+            const {imagen, repositorio, pagina, tecnologias} = por;
+
+            //Seccion datos del proyecto
+
+            const paginaProyecto = document.createElement('A');
+            paginaProyecto.textContent = "Pagina";
+            paginaProyecto.href = pagina;
+            paginaProyecto.target = "_blank";
+
+            const repositorioProyecto = document.createElement('A');
+            repositorioProyecto.textContent = "Repositorio";
+            repositorioProyecto.href = repositorio;
+            repositorioProyecto.target = "_blank";
+
+            const enlaces = document.createElement('DIV');
+            enlaces.classList.add('enlaces');
+            enlaces.appendChild(paginaProyecto);
+            enlaces.appendChild(repositorioProyecto);
+
+            const iconos = document.createElement('DIV');
+            iconos.classList.add('iconos');
+
+            const datosProyecto = document.createElement('DIV');
+            datosProyecto.classList.add('datos-proyecto');
+            datosProyecto.appendChild(iconos);
+            datosProyecto.appendChild(enlaces);
+
+            //Seccion imagen del proyecto
+            const sourceWebp = document.createElement('SOURCE');
+            sourceWebp.srcset = ruta + imagen + ".webp";
+            sourceWebp.type = "image/webp";
+
+            const sourceJpg = document.createElement('SOURCE');
+            sourceJpg.srcset = ruta + imagen + ".jpg";
+            sourceJpg.type = "image/jpeg";
+
+            const imgProyecto = document.createElement('IMG');
+            imgProyecto.loading = "lazy";
+            imgProyecto.src = ruta + imagen + ".jpg";
+            imgProyecto.alt = "Imagen Cliente";
+
+            const picture = document.createElement('PICTURE');
+            picture.appendChild(sourceWebp);
+            picture.appendChild(sourceJpg);
+            picture.appendChild(imgProyecto);
+
+            const imagenProyecto = document.createElement('DIV');
+            imagenProyecto.classList.add('imagen');
+            imagenProyecto.appendChild(picture);
+
+            //Contenedor
+            const proyecto = document.createElement('DIV');
+            proyecto.classList.add('proyecto');
+            proyecto.appendChild(datosProyecto);
+            proyecto.appendChild(imagenProyecto);
+
+            seccionPortafolio.appendChild(proyecto);
+        });
+    } catch (error) {
+        console.log(error);
+    }
 }

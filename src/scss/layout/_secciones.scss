@@ -7,16 +7,15 @@
     @include tablet{
         flex-direction: row;
     } 
-    .seccion-portafolio{
-        overflow-y: scroll;
+    .seccion{
+        width: 100vw;
+        height: auto;
+        @include tablet{
+            width: 100vw;
+            height: 100vh;
+        }
     }
-
-    .seccion-contacto{
-        // overflow-y: scroll;
+    .seccion-inicio{
+        height: 100vh;
     }
-}
-
-.seccion{
-    width: 100vw;
-    height: 100vh;
 }
