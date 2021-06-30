@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     clickHamburguer();
     crearHabilidades();
     crearPortafolio();
+    validarFormulario();
 });
 
 function navegacionFija() {
@@ -108,6 +109,7 @@ function mostrarInformacionHabilidad(e) {
 async function crearPortafolio(){
     try {
         const ruta = "build/img/portafolio/";
+        const rutaTecnologias = "build/img/tecnologias/";
         const resultado = await fetch('./data.json');
         const db = await resultado.json();
         const { portafolio } = db;
@@ -116,7 +118,33 @@ async function crearPortafolio(){
             const {imagen, repositorio, pagina, tecnologias} = por;
 
             //Seccion datos del proyecto
+            const iconos = document.createElement('DIV');
+            iconos.classList.add('iconos');
+            
+            //Tecnologias Proyecto
+            for (let i = 0; i < tecnologias.length; i++) {
+                const sourceWebpTecnologia = document.createElement('SOURCE');
+                sourceWebpTecnologia.srcset = rutaTecnologias + tecnologias[i] + ".webp";
+                sourceWebpTecnologia.type = "image/webp";
 
+                const sourcePngTecnologias = document.createElement('SOURCE');
+                sourcePngTecnologias.srcset = rutaTecnologias + tecnologias[i] + ".png";
+                sourcePngTecnologias.type = "image/png";
+
+                const imagenTecnologia = document.createElement('IMG');
+                imagenTecnologia.type = "lazy";
+                imagenTecnologia.src = rutaTecnologias + tecnologias[i] + ".png";
+                imagenTecnologia.alt = "Imagen Tecnologia";
+
+                const pictureTecnologias = document.createElement('PICTURE');
+                pictureTecnologias.appendChild(sourceWebpTecnologia);
+                pictureTecnologias.appendChild(sourcePngTecnologias);
+                pictureTecnologias.appendChild(imagenTecnologia);
+
+                iconos.appendChild(pictureTecnologias);
+            }
+
+            //Enlaces Proyecto
             const paginaProyecto = document.createElement('A');
             paginaProyecto.textContent = "Pagina";
             paginaProyecto.href = pagina;
@@ -132,8 +160,6 @@ async function crearPortafolio(){
             enlaces.appendChild(paginaProyecto);
             enlaces.appendChild(repositorioProyecto);
 
-            const iconos = document.createElement('DIV');
-            iconos.classList.add('iconos');
 
             const datosProyecto = document.createElement('DIV');
             datosProyecto.classList.add('datos-proyecto');
@@ -174,4 +200,51 @@ async function crearPortafolio(){
     } catch (error) {
         console.log(error);
     }
+}
+
+function validarFormulario(){
+    const botonEnviar = document.querySelector('#boton-enviar');
+    const nombre = document.querySelector('#nombre');
+    const obNombre = document.querySelector('.ob-nombre');
+    const correo = document.querySelector('#correo');
+    const obCorreo = document.querySelector('.ob-correo');
+    const asunto = document.querySelector('#asunto');
+    const obAsunto = document.querySelector('.ob-asunto');
+    const mensaje = document.querySelector('#mensaje');
+    const obMensaje = document.querySelector('.ob-mensaje');
+    const numero1 = document.querySelector('#numero1');
+    const numero2 = document.querySelector('#numero2');
+    const suma = document.querySelector('#numero');
+    const obSuma = document.querySelector('.ob-numero');
+
+    botonEnviar.addEventListener('click', function () {
+        if (nombre.value == "" || nombre.value == null) {
+            obNombre.classList.add('obligatorio');
+            return false;
+        }else{
+            obNombre.classList.remove('obligatorio');
+        }
+
+        if (correo.value == "" || correo.value == null) {
+            obCorreo.classList.add('obligatorio');
+            return false
+        }else{
+            obCorreo.classList.remove('obligatorio');
+        }
+
+        if (asunto.value == "" || asunto.value == null) {
+            obAsunto.classList.add('obligatorio');
+            return false
+        }else{
+            obAsunto.classList.remove('obligatorio');
+        }
+
+        if (mensaje.value == "" || mensaje.value == null) {
+            obMensaje.classList.add('obligatorio');
+            return false
+        }else{
+            obMensaje.classList.remove('obligatorio');
+        }
+
+    });
 }

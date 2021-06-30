@@ -54,7 +54,7 @@
             "imagen": "pa",
             "repositorio": "https://github.com/axelr23/PortafolioWeb-Ax-1",
             "pagina": "#",
-            "tecnologias": ["html.png", "css.png", "js.png", "php.png"]
+            "tecnologias": ["html", "css", "js", "php"]
         }
     ]
 }

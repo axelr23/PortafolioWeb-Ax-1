@@ -104,3 +104,13 @@
         }
     }
 }
+.ob{
+    display: none;
+}
+
+.obligatorio{
+    display: inline-block;
+    color: $rojo;
+    font-weight: $bold;
+    font-size: $separacion/1.5;
+}
