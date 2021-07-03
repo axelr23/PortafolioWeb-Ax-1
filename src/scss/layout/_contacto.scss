@@ -1,4 +1,5 @@
 .contacto {
+    height: 100%;
     display: flex;
     flex-direction: column;
     h2 {
@@ -18,6 +19,13 @@
             background-color: $blanco;
         }
     }
+}
+
+.contenido-contacto{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     .formulario {
         display: flex;
         flex-direction: column;
@@ -25,6 +33,7 @@
         input[type="submit"]{
             margin-bottom: $separacion/2;
             @include tablet{
+                margin-top: 0;
                 width: 20rem;
             }
         }
@@ -113,4 +122,9 @@
     color: $rojo;
     font-weight: $bold;
     font-size: $separacion/1.5;
+}
+
+.error-suma{
+    color: $rojo;
+    display: inline-block;
 }

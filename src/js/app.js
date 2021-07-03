@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     navegacionFija();
-    // enlaceActivo();
     clickHamburguer();
+    clickEnlace();
     crearHabilidades();
     crearPortafolio();
     validarFormulario();
@@ -25,24 +25,44 @@ function navegacionFija() {
     observer.observe(document.querySelector('.copyright'));
 }
 
-function enlaceActivo() {
-
+function navegacionHamburguer(){
+    const navegacion = document.querySelector('.navegacion');
+    const enlaces = document.querySelector('.contenido-navegacion');
+    if (enlaces.classList.contains('enlaces-activo')) {
+        enlaces.classList.remove('enlaces-activo');
+        setTimeout(() => {
+            navegacion.classList.remove('posicion');
+        }, 400);
+    } else {
+        navegacion.classList.add('posicion');
+        enlaces.classList.add('enlaces-activo');
+    }
 }
 
 function clickHamburguer() {
     const hamburguer = document.querySelector('.toggler');
-    const navegacion = document.querySelector('.navegacion');
-    const enlaces = document.querySelector('.contenido-navegacion');
     hamburguer.addEventListener('click', function () {
-        if (enlaces.classList.contains('enlaces-activo')) {
-            enlaces.classList.remove('enlaces-activo');
-            setTimeout(() => {
-                navegacion.classList.remove('posicion');
-            }, 400);
-        } else {
-            navegacion.classList.add('posicion');
-            enlaces.classList.add('enlaces-activo');
+        if (hamburguer.classList.contains('cheked')) {
+            hamburguer.classList.remove('cheked');
+        }else{
+            hamburguer.classList.add('cheked');
         }
+        navegacionHamburguer();
+    });
+}
+
+function clickEnlace(){
+    const hamburguer = document.querySelector('.toggler');
+    const enlaces = document.querySelectorAll('.contenido-navegacion');
+    enlaces.forEach(enlace => {
+        enlace.addEventListener('click', () => {
+            if (hamburguer.classList.contains('cheked')) {
+                hamburguer.classList.remove('cheked');
+            }else{
+                hamburguer.classList.add('cheked');
+            }
+            navegacionHamburguer();
+        });
     });
 }
 
@@ -215,6 +235,7 @@ function validarFormulario(){
     const numero1 = document.querySelector('#numero1');
     const numero2 = document.querySelector('#numero2');
     const suma = document.querySelector('#numero');
+    const resultadoSuma = document.querySelector('.suma');
     const obSuma = document.querySelector('.ob-numero');
 
     botonEnviar.addEventListener('click', function () {
@@ -246,5 +267,18 @@ function validarFormulario(){
             obMensaje.classList.remove('obligatorio');
         }
 
+        if (suma.value == "" || suma.value == null){
+            obSuma.classList.add('obligatorio');
+            return false
+        }else{
+            obSuma.classList.remove('obligatorio');
+        }
+
+        // if (!parseInt(suma.value) == parseInt(numero1.textContent + numero2.textContent)) {
+        //     resultadoSuma.classList.add('error-suma');
+        //     return false;
+        // } else {
+        //     resultadoSuma.classList.remove('error-suma');
+        // }
     });
 }

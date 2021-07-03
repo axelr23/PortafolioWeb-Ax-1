@@ -20,12 +20,16 @@
                     <div class="overlay">
                         <header class="contenedor header">
                             <p class="effect-fade copyright">Todos los derechos reservados 2021 &COPY;</p>
-                            <a href="/documentos/CURRICULUM VITAE.pdf" target="_blank" class="boton-verde effect-fade">Descargar CV</a>
+                            <a href="/documentos/CURRICULUM VITAE.pdf" target="_blank"
+                                class="boton-verde effect-fade">Descargar CV</a>
                         </header>
                         <div class="contenedor contenido-video">
                             <h1>Hola, <span>Soy Axel Rangel</span></h1>
                             <p class="titulo effect-fade">Desarrollador Web - Freelancer</p>
-                            <p class="effect-fade">Soy una persona autodidacta con un gran gusto por el desarrollo de software, soy un apasionado por el trabajo con muchas ganas de aportar mis conocimientos, me considero una persona tenaz en cuestión de la investigación, para lograr el objetivo del trabajo.</p>
+                            <p class="effect-fade">Soy una persona autodidacta con un gran gusto por el desarrollo de
+                                software, soy un apasionado por el trabajo con muchas ganas de aportar mis
+                                conocimientos, me considero una persona tenaz en cuestión de la investigación, para
+                                lograr el objetivo del trabajo.</p>
                         </div>
                     </div>
                     <video autoplay muted loop>
@@ -54,47 +58,53 @@
             <div class="seccion seccion-contacto" id="contacto">
                 <div class="contacto contenedor">
                     <h2>Contacto</h2>
-                    <form class="formulario" action="" method="POST"> <!-- /includes/correo.php --> 
-                        <div class="dato">
-                            <div class="input-dato">
-                                <input type="text" id="nombre" name="nombre" required>
-                                <div class="linea"></div>
-                                <label for="nombre">Nombre <span class="ob ob-nombre">*</span></label>
+                    <div class="contenido-contacto">
+                        <form class="formulario" action="/includes/correo.php" method="POST">
+                            <!-- /includes/correo.php -->
+                            <div class="dato">
+                                <div class="input-dato">
+                                    <input type="text" id="nombre" name="nombre" required>
+                                    <div class="linea"></div>
+                                    <label for="nombre">Nombre <span class="ob ob-nombre">*</span></label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="dato">
-                            <div class="input-dato">
-                                <input type="text" id="correo" name="correo" required>
-                                <div class="linea"></div>
-                                <label for="correo">Correo <span class="ob ob-correo">*</span></label>
+                            <div class="dato">
+                                <div class="input-dato">
+                                    <input type="text" id="correo" name="correo" required>
+                                    <div class="linea"></div>
+                                    <label for="correo">Correo <span class="ob ob-correo">*</span></label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="dato">
-                            <div class="input-dato">
-                                <input type="text" id="asunto" name="asunto" required>
-                                <div class="linea"></div>
-                                <label for="asunto">Asunto <span class="ob ob-asunto">*</span></label>
+                            <div class="dato">
+                                <div class="input-dato">
+                                    <input type="text" id="asunto" name="asunto" required>
+                                    <div class="linea"></div>
+                                    <label for="asunto">Asunto <span class="ob ob-asunto">*</span></label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="dato">
-                            <div class="input-dato">
-                                <textarea id="mensaje" name = "mensaje" required></textarea>
-                                <div class="linea"></div>
-                                <label for="mensaje">Mensaje <span class="ob ob-mensaje">*</span></label>
+                            <div class="dato">
+                                <div class="input-dato">
+                                    <textarea id="mensaje" name="mensaje" required></textarea>
+                                    <div class="linea"></div>
+                                    <label for="mensaje">Mensaje <span class="ob ob-mensaje">*</span></label>
+                                </div>
                             </div>
-                        </div>
-                        <div class="dato">
+                            <!-- <div class="dato">
                             <div class="input-dato">
                                 <input type="text" id="numero" required>
                                 <div class="linea"></div>
-                                <label for="numero"><span class="numero1" id="numero1">32</span> + <span class="numero2" id="numero2">80</span> = <span class="ob ob-numero">*</span></label>
+                                <label for="numero"><span class="numero1" id="numero1">32</span> + <span class="numero2" id="numero2">80</span> = <span class="ob ob-numero">*</span> <span class="ob suma"> El resultado no es correcto</span></label>
                             </div>
+                        </div> -->
+                            <input type="submit" value="Enviar" class="boton-azul" id="boton-enviar"
+                                onclick="validarFormulario()">
+                        </form>
+                        <div class="redes">
+                            <a href="https://www.linkedin.com/in/axel-rangel-lopez-92523a203/" title="LinkedId"
+                                target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://github.com/axelr23" title="GitHub" target="_blank"><i
+                                    class="fab fa-github"></i></a>
                         </div>
-                        <input type="submit" value="Enviar" class="boton-azul" id="boton-enviar" onclick="validarFormulario()">
-                    </form>
-                    <div class="redes">
-                        <a href="https://www.linkedin.com/in/axel-rangel-lopez-92523a203/" title="LinkedId" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/axelr23" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -106,26 +116,26 @@
                 <div></div>
             </div>
             <ul class="contenido-navegacion contenedor effect-fade">
-                <li class="lista enlace-inicio activo">
-                    <a href="#inicio">
+                <li class="lista enlace-inicio">
+                    <a href="#inicio" class="enlace">
                         <span class="icon"><i class="fas fa-home"></i></span>
                         <span class="titulo">Inicio</span>
                     </a>
                 </li>
                 <li class="lista enlace-habilidades">
-                    <a href="#habilidades" >
+                    <a href="#habilidades" class="enlace">
                         <span class="icon"><i class="fas fa-shapes"></i></span>
                         <span class="titulo">Habilidades</span>
                     </a>
                 </li>
                 <li class="lista enlace-portafolio">
-                    <a href="#portafolio"> 
+                    <a href="#portafolio" class="enlace">
                         <span class="icon"><i class="fas fa-book-open"></i></span>
                         <span class="titulo">Portafolio</span>
                     </a>
                 </li>
                 <li class="lista enlace-contacto">
-                    <a href="#contacto">
+                    <a href="#contacto" class="enlace">
                         <span class="icon"><i class="fas fa-comment-dots"></i></span>
                         <span class="titulo">Contacto</span>
                     </a>

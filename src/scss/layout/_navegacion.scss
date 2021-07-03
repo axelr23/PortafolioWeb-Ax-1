@@ -32,18 +32,14 @@
         opacity: 0;
         cursor: pointer;
         transition: top 0.3s ease;
-        &:checked + .hamburguer > div {
-            transform: rotate(135deg);
-        }
+        // &:checked + .hamburguer > div {
+        //     transform: rotate(135deg);
+        // }
 
-        &:checked + .hamburguer > div::after,
-        &:checked + .hamburguer > div::before {
-            transform: rotate(90deg);
-            top: 0;
-        }
-        // &:checked ~ .contenido-navegacion{
-        //     visibility: visible;
-        //     transform: translateX(0%) translateY(0%);
+        // &:checked + .hamburguer > div::after,
+        // &:checked + .hamburguer > div::before {
+        //     transform: rotate(90deg);
+        //     top: 0;
         // }
         @include tablet {
             display: none;
@@ -56,7 +52,7 @@
     .hamburguer {
         position: absolute;
         z-index: 3;
-        top: 8rem; //8rem
+        top: 8rem;
         left: 1rem;
         width: 6rem;
         height: 6rem;
@@ -96,6 +92,18 @@
         &.top {
             top: 0.5rem;
         }
+    }
+}
+
+.cheked{
+    &:checked + .hamburguer > div {
+        transform: rotate(135deg);
+    }
+
+    &:checked + .hamburguer > div::after,
+    &:checked + .hamburguer > div::before {
+        transform: rotate(90deg);
+        top: 0;
     }
 }
 
@@ -188,17 +196,5 @@
         opacity: 1;
         visibility: visible;
         transform: translate(0, 40%);
-    }
-    &.activo {
-        a {
-            .icon {
-                color: $blanco;
-            }
-        }
-        a .titulo {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(0, 40%);
-        }
     }
 }
