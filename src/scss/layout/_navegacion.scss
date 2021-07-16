@@ -1,200 +1,128 @@
+.row {
+    position: absolute;
+    width: 100%;
+    padding: $separacion/1.5 0;
+    display: flex;
+    align-items: center;
+    z-index: 10000;
+    .contenido-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
 .navegacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .toggler,
+    .hamburguer {
+        @include desktop {
+            display: none;
+        }
+    }
+}
+
+.lista-navegacion {
+    position: fixed;
     top: 0;
     left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 4;
-    width: 100%;
-    bottom: 0;
-    @include tablet {
-        top: auto;
-        height: auto;
-        position: absolute;
-        &.fijo {
-            background-color: $grisOscuro;
-            position: fixed;
-        }
-    }
-    &.posicion {
-        position: absolute;
-    }
-
-    .toggler {
-        position: absolute;
-        z-index: 4;
-        top: 8rem;
-        left: 1rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        opacity: 0;
-        cursor: pointer;
-        transition: top 0.3s ease;
-        // &:checked + .hamburguer > div {
-        //     transform: rotate(135deg);
-        // }
-
-        // &:checked + .hamburguer > div::after,
-        // &:checked + .hamburguer > div::before {
-        //     transform: rotate(90deg);
-        //     top: 0;
-        // }
-        @include tablet {
-            display: none;
-        }
-        &.top {
-            top: 0.5rem;
-        }
-    }
-
-    .hamburguer {
-        position: absolute;
-        z-index: 3;
-        top: 8rem;
-        left: 1rem;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 50%;
-        background-color: rgba($verde, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition: top 0.3s ease;
-        div {
-            position: absolute;
-            width: 50%;
-            height: 3px;
-            border-radius: 1.5px;
-            background-color: $blanco;
-            transition: 0.4s;
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                width: 100%;
-                height: 0.3rem;
-                border-radius: 1.5px;
-                background-color: $blanco;
-                transition: 0.4s;
-            }
-            &::before {
-                top: -1rem;
-            }
-            &::after {
-                top: 1rem;
-            }
-        }
-        @include tablet {
-            display: none;
-        }
-        &.top {
-            top: 0.5rem;
-        }
-    }
-}
-
-.cheked{
-    &:checked + .hamburguer > div {
-        transform: rotate(135deg);
-    }
-
-    &:checked + .hamburguer > div::after,
-    &:checked + .hamburguer > div::before {
-        transform: rotate(90deg);
-        top: 0;
-    }
-}
-
-.contenido-navegacion {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-left: 0;
-    transform: translateX(-150%);
-    background-color: rgba($negro, 0.9);
-    transition: 0.6s;
+    transition: .6s;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($negro, .9);
+    margin: 0;
+    padding: 0;
+    transform: translateX(150%);
     visibility: hidden;
-    width: 100%;
-    height: 100%;
-    @include tablet {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    @include desktop {
         background-color: transparent;
-        margin-top: $separacion;
-        margin-top: 0;
-        flex-direction: row;
-        gap: $separacion * 2;
-        height: auto;
-        visibility: visible;
         transform: translateX(0%);
-    }
-    &.enlaces-activo {
         visibility: visible;
-        transform: translateX(0%) translateY(0%);
-    }
-}
-.lista {
-    position: relative;
-    z-index: 1;
-    a {
+        position: static;
+        width: auto;
+        height: auto;
+        top: auto;
+        left: auto;
+        visibility: visible;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        text-align: center;
-        color: $blanco;
-        font-size: 2.5rem;
-        @include tablet {
-            position: relative;
-        }
-        .icon {
-            position: relative;
-            display: none;
-            line-height: 7.5rem;
-            text-align: center;
-            transition: 0.5s;
-            color: $gris;
-            @include tablet {
-                display: block;
-            }
-            &:hover {
-                color: $blanco;
-            }
-        }
-        .titulo {
-            float: left;
+        flex-direction: row;
+    }
+    li {
+        a {
+            color: $blanco;
+            text-transform: uppercase;
             font-size: 4rem;
             font-weight: $regular;
-            @include tablet {
-                position: absolute;
-                top: -7rem;
-                font-size: 2rem;
-                opacity: 0;
-                visibility: hidden;
-                background-color: $verde;
-                border-radius: 3px;
-                width: auto;
-                padding: 5px 1rem;
-                transition: 0.5s;
-                &::before {
-                    content: "";
-                    position: absolute;
-                    width: 12px;
-                    height: 12px;
-                    background-color: $verde;
-                    bottom: -8px;
-                    left: 45%;
-                    transform: rotate(45deg) translateX(-20%);
-                    border-radius: 2px;
-                }
+            @include desktop{
+                font-size: 2.3rem;
             }
         }
     }
-    &:hover a .titulo {
-        opacity: 1;
-        visibility: visible;
-        transform: translate(0, 40%);
+}
+
+.fijo {
+    background-color: $grisOscuro;
+}
+
+.toggler {
+    position: absolute;
+    right: 2rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.hamburguer {
+    display: flex;
+    position: absolute;
+    right: 2rem;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: $verde;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    div {
+        position: absolute;
+        width: 60%;
+        height: 0.3rem;
+        border-radius: 1.5px;
+        background-color: $blanco;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 0.3rem;
+            border-radius: 1.5px;
+            background-color: $blanco;
+        }
+        &::before{
+            top: -1rem;
+        }
+        &::after{
+            top: 1rem;
+        }
     }
+}
+
+.toggler:checked~ .lista-navegacion{
+    visibility: visible;
+    transform: translateX(0%);
+}
+
+.fijo{
+    position: fixed;
 }

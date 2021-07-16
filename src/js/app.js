@@ -8,21 +8,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function navegacionFija() {
-    const barra = document.querySelector('.navegacion');
+    const barra = document.querySelector('.row');
     const hamburguer = document.querySelector('.hamburguer');
     const toggler = document.querySelector('.toggler');
     const observer = new IntersectionObserver(function (entries) {
-        if (!entries[0].isIntersecting) {
-            barra.classList.add('fijo');
-            hamburguer.classList.add('top');
-            toggler.classList.add('top');
-        } else {
-            barra.classList.remove('fijo');
-            hamburguer.classList.remove('top');
-            toggler.classList.remove('top');
-        }
+        barra.classList.toggler('fijo');
+        // if (entries[0].isIntersecting) {
+        //     barra.classList.add('fijo');
+        // } else {
+        //     barra.classList.remove('fijo');
+        // }
     });
-    observer.observe(document.querySelector('.copyright'));
+    observer.observe(document.querySelector('.seccion-habilidades'));
 }
 
 function navegacionHamburguer(){
