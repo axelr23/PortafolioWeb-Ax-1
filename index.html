@@ -58,75 +58,65 @@
         </main>
     </header>
 
+    <section class="contenedor contenido-habilidades" id="habilidades">
+        <h2 class="header-habilidades">Habilidades</h2>
+        <ul class="iconos-habilidades"></ul>
+    </section>
 
+    <section class="contenedor portafolio" id="portafolio">
+        <h2>Portafolio</h2>
+        <div class="apartado-portafolio"></div>
+    </section>
 
-    <div class="seccion seccion-habilidades" id="habilidades">
-        <div class="contenedor contenido-habilidades">
-            <h2 class="header-habilidades">Habilidades</h2>
-            <ul class="iconos-habilidades"></ul>
-        </div>
-    </div>
-
-    <div class="seccion seccion-portafolio" id="portafolio">
-        <div class="contenedor portafolio">
-            <h2>Portafolio</h2>
-            <div class="apartado-portafolio"></div>
-        </div>
-    </div>
-
-    <div class="seccion seccion-contacto" id="contacto">
-        <div class="contacto contenedor">
-            <h2>Contacto</h2>
-            <div class="contenido-contacto">
-                <form class="formulario" action="/includes/correo.php" method="POST">
-                    <!-- /includes/correo.php -->
-                    <div class="dato">
-                        <div class="input-dato">
-                            <input type="text" id="nombre" name="nombre" required>
-                            <div class="linea"></div>
-                            <label for="nombre">Nombre <span class="ob ob-nombre">*</span></label>
-                        </div>
+    <section class="contacto contenedor" id="contacto">
+        <h2>Contacto</h2>
+        <div class="contenido-contacto">
+            <form class="formulario" action="/includes/correo.php" method="POST">
+                <!-- /includes/correo.php -->
+                <div class="dato">
+                    <div class="input-dato">
+                        <input type="text" id="nombre" name="nombre" required>
+                        <div class="linea"></div>
+                        <label for="nombre">Nombre <span class="ob ob-nombre">*</span></label>
                     </div>
-                    <div class="dato">
-                        <div class="input-dato">
-                            <input type="text" id="correo" name="correo" required>
-                            <div class="linea"></div>
-                            <label for="correo">Correo <span class="ob ob-correo">*</span></label>
-                        </div>
+                </div>
+                <div class="dato">
+                    <div class="input-dato">
+                        <input type="text" id="correo" name="correo" required>
+                        <div class="linea"></div>
+                        <label for="correo">Correo <span class="ob ob-correo">*</span></label>
                     </div>
-                    <div class="dato">
-                        <div class="input-dato">
-                            <input type="text" id="asunto" name="asunto" required>
-                            <div class="linea"></div>
-                            <label for="asunto">Asunto <span class="ob ob-asunto">*</span></label>
-                        </div>
+                </div>
+                <div class="dato">
+                    <div class="input-dato">
+                        <input type="text" id="asunto" name="asunto" required>
+                        <div class="linea"></div>
+                        <label for="asunto">Asunto <span class="ob ob-asunto">*</span></label>
                     </div>
-                    <div class="dato">
-                        <div class="input-dato">
-                            <textarea id="mensaje" name="mensaje" required></textarea>
-                            <div class="linea"></div>
-                            <label for="mensaje">Mensaje <span class="ob ob-mensaje">*</span></label>
-                        </div>
+                </div>
+                <div class="dato">
+                    <div class="input-dato">
+                        <textarea id="mensaje" name="mensaje" required></textarea>
+                        <div class="linea"></div>
+                        <label for="mensaje">Mensaje <span class="ob ob-mensaje">*</span></label>
                     </div>
-                    <!-- <div class="dato">
+                </div>
+                <!-- <div class="dato">
                     <div class="input-dato">
                         <input type="text" id="numero" required>
                         <div class="linea"></div>
                         <label for="numero"><span class="numero1" id="numero1">32</span> + <span class="numero2" id="numero2">80</span> = <span class="ob ob-numero">*</span> <span class="ob suma"> El resultado no es correcto</span></label>
                     </div>
                 </div> -->
-                    <input type="submit" value="Enviar" class="boton-azul" id="boton-enviar"
-                        onclick="validarFormulario()">
-                </form>
-                <div class="redes">
-                    <a href="https://www.linkedin.com/in/axel-rangel-lopez-92523a203/" title="LinkedId"
-                        target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="https://github.com/axelr23" title="GitHub" target="_blank"><i
-                            class="fab fa-github"></i></a>
-                </div>
+                <input type="submit" value="Enviar" class="boton-azul" id="boton-enviar" onclick="validarFormulario()">
+            </form>
+            <div class="redes">
+                <a href="https://www.linkedin.com/in/axel-rangel-lopez-92523a203/" title="LinkedId" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/axelr23" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </div>
-    </div>
+    </section>
     <script src="build/js/bundle.min.js"></script>
 </body>
 

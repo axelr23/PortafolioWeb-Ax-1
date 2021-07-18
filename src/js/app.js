@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    navegacionFija();
+    // navegacionFija();
     clickHamburguer();
     clickEnlace();
     crearHabilidades();
