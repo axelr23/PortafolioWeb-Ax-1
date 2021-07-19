@@ -42,6 +42,7 @@
         display: flex;
         justify-content: center;
         gap: $separacion/2;
+        margin-bottom: $separacion/2;
         a{
             font-size: 3.5rem;
             color: rgba($gris, .4);

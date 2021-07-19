@@ -1,25 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // navegacionFija();
-    clickHamburguer();
-    clickEnlace();
+    navegacionFija();
+    // clickHamburguer();
+    // clickEnlace();
     crearHabilidades();
     crearPortafolio();
     validarFormulario();
+    obtenerAño();
 });
 
 function navegacionFija() {
     const barra = document.querySelector('.row');
-    const hamburguer = document.querySelector('.hamburguer');
-    const toggler = document.querySelector('.toggler');
+    const btnCv = document.querySelector('.boton-cv');
     const observer = new IntersectionObserver(function (entries) {
-        barra.classList.toggler('fijo');
-        // if (entries[0].isIntersecting) {
-        //     barra.classList.add('fijo');
-        // } else {
-        //     barra.classList.remove('fijo');
-        // }
+        if (entries[0].isIntersecting) {
+            barra.classList.remove('fijo');
+            btnCv.classList.remove('none');
+        } else {
+            barra.classList.add('fijo');
+            btnCv.classList.add('none');
+        }
     });
-    observer.observe(document.querySelector('.seccion-habilidades'));
+    observer.observe(document.querySelector('.titulo-inicio'));
 }
 
 function navegacionHamburguer(){
@@ -278,4 +279,11 @@ function validarFormulario(){
         //     resultadoSuma.classList.remove('error-suma');
         // }
     });
+}
+
+function obtenerAño(){
+    const spanYear = document.querySelector('.year');
+    var fecha = new Date();
+    var year = fecha.getFullYear(); 
+    spanYear.textContent = year;
 }

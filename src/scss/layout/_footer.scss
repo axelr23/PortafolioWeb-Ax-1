@@ -1,0 +1,8 @@
+.footer{
+    background-color: darken($negro, 4);
+    // background-color: darken($verde, 10);
+    padding: $separacion/2 0;
+    p{
+        text-align: center;
+    }
+}

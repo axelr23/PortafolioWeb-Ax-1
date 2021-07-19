@@ -1,7 +1,8 @@
 .row {
-    position: absolute;
+    position: fixed;
     width: 100%;
-    padding: $separacion/1.5 0;
+    padding: $separacion/2 0;
+    margin-top: $separacion/3;
     display: flex;
     align-items: center;
     z-index: 10000;
@@ -9,6 +10,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+    @include desktop{
+        margin-top: 0;
     }
 }
 
@@ -63,13 +67,23 @@
             font-weight: $regular;
             @include desktop{
                 font-size: 2.3rem;
+                --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+                &::after{
+                    content: '';
+                    background-color: $blanco;
+                    width: 100%;
+                    height: .3rem;
+                    display: block;
+                    margin-top: -.5rem;
+                    clip-path: var(--clippy);
+                    transition: clip-path .4s;
+                }
+                &:hover{
+                    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
             }
         }
     }
-}
-
-.fijo {
-    background-color: $grisOscuro;
 }
 
 .toggler {
@@ -124,5 +138,15 @@
 }
 
 .fijo{
-    position: fixed;
+    @include desktop{
+        background-color: darken($negro, 4);
+        width: 100%;
+    }
+}
+
+.none{
+    display: none;
+    @include desktop{
+        display: inline-block;
+    }
 }
