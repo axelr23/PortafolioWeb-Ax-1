@@ -28,6 +28,7 @@
     justify-content: center;
     .formulario {
         display: flex;
+        gap: $separacion/2;
         flex-direction: column;
         margin-top: $separacion;
         input[type="submit"]{

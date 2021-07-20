@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     navegacionFija();
-    // clickHamburguer();
+    clickHamburguer();
     // clickEnlace();
     crearHabilidades();
     crearPortafolio();
@@ -23,43 +23,17 @@ function navegacionFija() {
     observer.observe(document.querySelector('.titulo-inicio'));
 }
 
-function navegacionHamburguer(){
-    const navegacion = document.querySelector('.navegacion');
-    const enlaces = document.querySelector('.contenido-navegacion');
-    if (enlaces.classList.contains('enlaces-activo')) {
-        enlaces.classList.remove('enlaces-activo');
-        setTimeout(() => {
-            navegacion.classList.remove('posicion');
-        }, 400);
-    } else {
-        navegacion.classList.add('posicion');
-        enlaces.classList.add('enlaces-activo');
-    }
-}
-
 function clickHamburguer() {
     const hamburguer = document.querySelector('.toggler');
+    const enlaces = document.querySelector('.lista-navegacion');
+    const lista = document.querySelectorAll('.lista');
     hamburguer.addEventListener('click', function () {
-        if (hamburguer.classList.contains('cheked')) {
-            hamburguer.classList.remove('cheked');
-        }else{
-            hamburguer.classList.add('cheked');
-        }
-        navegacionHamburguer();
+        enlaces.classList.toggle('posicion');
     });
-}
 
-function clickEnlace(){
-    const hamburguer = document.querySelector('.toggler');
-    const enlaces = document.querySelectorAll('.contenido-navegacion');
-    enlaces.forEach(enlace => {
+    lista.forEach(enlace => {
         enlace.addEventListener('click', () => {
-            if (hamburguer.classList.contains('cheked')) {
-                hamburguer.classList.remove('cheked');
-            }else{
-                hamburguer.classList.add('cheked');
-            }
-            navegacionHamburguer();
+            enlaces.classList.toggle('posicion');
         });
     });
 }

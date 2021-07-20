@@ -5,13 +5,13 @@
     margin-top: $separacion/3;
     display: flex;
     align-items: center;
-    z-index: 10000;
+    z-index: 5;
     .contenido-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    @include desktop{
+    @include desktop {
         margin-top: 0;
     }
 }
@@ -32,10 +32,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    transition: .6s;
+    transition: 0.6s;
     width: 100vw;
     height: 100vh;
-    background-color: rgba($negro, .9);
+    background-color: rgba($negro, 0.9);
     margin: 0;
     padding: 0;
     transform: translateX(150%);
@@ -65,24 +65,28 @@
             text-transform: uppercase;
             font-size: 4rem;
             font-weight: $regular;
-            @include desktop{
+            @include desktop {
                 font-size: 2.3rem;
                 --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
-                &::after{
-                    content: '';
+                &::after {
+                    content: "";
                     background-color: $blanco;
                     width: 100%;
-                    height: .3rem;
+                    height: 0.3rem;
                     display: block;
-                    margin-top: -.5rem;
+                    margin-top: -0.5rem;
                     clip-path: var(--clippy);
-                    transition: clip-path .4s;
+                    transition: clip-path 0.4s;
                 }
-                &:hover{
+                &:hover {
                     --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
                 }
             }
         }
+    }
+    &.posicion {
+        visibility: visible;
+        transform: translateX(0%);
     }
 }
 
@@ -123,30 +127,25 @@
             border-radius: 1.5px;
             background-color: $blanco;
         }
-        &::before{
+        &::before {
             top: -1rem;
         }
-        &::after{
+        &::after {
             top: 1rem;
         }
     }
 }
 
-.toggler:checked~ .lista-navegacion{
-    visibility: visible;
-    transform: translateX(0%);
-}
-
-.fijo{
-    @include desktop{
+.fijo {
+    @include desktop {
         background-color: darken($negro, 4);
         width: 100%;
     }
 }
 
-.none{
+.none {
     display: none;
-    @include desktop{
+    @include desktop {
         display: inline-block;
     }
 }
