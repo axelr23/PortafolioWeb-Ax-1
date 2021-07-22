@@ -47,6 +47,18 @@
             "icon": "gulp.svg",
             "name": "GULP",
             "description": "GULP es una herramienta que permite automatizar una serie de tareas dentro del desarrollo web."
+        },
+        {
+            "id": 9,
+            "icon": "csharp.svg",
+            "name": "C#",
+            "description": "Es un lenguaje de programación multiparadigma desarrollado y estandarizado por la empresa Microsoft como parte de su plataforma .NET"
+        },
+        {
+            "id": 10,
+            "icon": "inkscape.svg",
+            "name": "INKSCAPE",
+            "description": "Es un editor de gráficos vectoriales libre y de código abierto."
         }
     ],
     "portafolio":[
